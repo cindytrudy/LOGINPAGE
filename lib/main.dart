@@ -32,3 +32,5 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+// NB:
+// Add a flutter logo to the asset and make it work

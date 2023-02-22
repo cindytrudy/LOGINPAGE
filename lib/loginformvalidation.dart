@@ -35,14 +35,15 @@ class _LoginFormValidationState extends State<LoginFormValidation> {
       ),
       body: SingleChildScrollView(
         child: Form(
-          autovalidateMode: true, //check for validation while typing
+          autovalidateMode:
+              AutovalidateMode.always, //check for validation while typing
           key: formkey,
           child: Column(
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.only(top: 60.0),
                 child: Center(
-                  child: Container(
+                  child: SizedBox(
                       width: 200,
                       height: 150,
                       child: Image.asset('asset/images/flutter-logo.png')),
@@ -75,12 +76,12 @@ class _LoginFormValidationState extends State<LoginFormValidation> {
                           errorText: "Password should be atleast 6 characters"),
                       MaxLengthValidator(15,
                           errorText:
-                          "Password should not be greater than 15 characters")
+                              "Password should not be greater than 15 characters")
                     ])
-                  //validatePassword,        //Function to check validation
-                ),
+                    //validatePassword,        //Function to check validation
+                    ),
               ),
-              FlatButton(
+              TextButton(
                 onPressed: () {
                   //TODO FORGOT PASSWORD SCREEN GOES HERE
                 },
@@ -95,12 +96,12 @@ class _LoginFormValidationState extends State<LoginFormValidation> {
                 decoration: BoxDecoration(
                     color: Colors.blue,
                     borderRadius: BorderRadius.circular(20)),
-                child: FlatButton(
+                child: TextButton(
                   onPressed: () {
                     if (formkey.currentState!.validate()) {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (_) => HomePage()));
-                      
+                          MaterialPageRoute(builder: (_) => const HomePage()));
+
                       print("Validated");
                     } else {
                       print("Not Validated");
